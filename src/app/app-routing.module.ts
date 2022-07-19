@@ -2,7 +2,16 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
+  {
+    // esto es URL+ cada palabra o por defecto acá abajo
+    path: 'admin',
+    loadChildren: () => import('../app/@admin/pages/admin.module').then(m=> m.AdminModule)
   
+      },
+  {
+    path: 'users',
+    loadChildren: () => import('../app/@admin/pages/users/users.module').then(m=> m.UsersModule)
+      },
    {
     path: '',
     redirectTo: 'home',
